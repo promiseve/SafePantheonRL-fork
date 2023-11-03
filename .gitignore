@@ -8,6 +8,6 @@ logs/
 *__pycache__*
 *.ipynb_checkpoints*
 trajs/
-models/
+#models/
 .idea/
 .mypy_cache/
