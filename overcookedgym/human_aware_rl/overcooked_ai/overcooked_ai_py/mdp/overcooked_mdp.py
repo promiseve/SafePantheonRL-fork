@@ -31,7 +31,7 @@ class ObjectState(object):
         self.state = None if state is None else tuple(state)
 
     def is_valid(self):
-        if self.name in ['onion', 'tomato', 'dish']:
+        if self.name in ['onion', 'tomato', 'dish', 'medicine']:
             return self.state is None
         elif self.name == 'soup':
             soup_type, num_items, cook_time = self.state
@@ -705,6 +705,8 @@ class OvercookedGridworld(object):
                 player.set_object(ObjectState('onion', pos))
             elif terrain_type == 'T' and player.held_object is None:
                 player.set_object(ObjectState('tomato', pos))
+            elif terrain_type == 'M' and player.held_object is None:
+                player.set_object(ObjectState('medicine', pos))    
             elif terrain_type == 'D' and player.held_object is None:
                 dishes_already = len(new_state.player_objects_by_type['dish'])
                 player.set_object(ObjectState('dish', pos))
@@ -723,7 +725,7 @@ class OvercookedGridworld(object):
                         player.set_object(new_state.remove_object(i_pos))
                         shaped_reward += self.reward_shaping_params["SOUP_PICKUP_REWARD"]
 
-                elif player.get_object().name in ['onion', 'tomato']:
+                elif player.get_object().name in ['onion', 'tomato','medicine']:
                     item_type = player.get_object().name
 
                     if not new_state.has_object(i_pos):

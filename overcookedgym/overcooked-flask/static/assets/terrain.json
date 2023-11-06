@@ -142,7 +142,7 @@
 		},
 		"medicine.png": {
 			"frame": {
-				"x": 239,
+				"x": 256,
 				"y": 1,
 				"w": 15,
 				"h": 15
@@ -150,8 +150,8 @@
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
-				"x": 253,
-				"y": 1,
+				"x": 0,
+				"y": 0,
 				"w": 15,
 				"h": 15
 			},
