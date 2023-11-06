@@ -1,7 +1,7 @@
 *~
 __pycache__/
 *.egg-info
-data/
+#data/
 instance/
 .*node_modules/
 logs/
